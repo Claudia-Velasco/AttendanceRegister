@@ -104,42 +104,6 @@ fun main() {
         )
     )
 
-    println(
-        "Persona ${employee.fullName}     " +
-                "Dia: ${listCheckInOut[0].date}      " +
-                "Retardo: ${listCheckInOut[0].isRetardant(schedule, listPermissions)}           " +
-                "Registro incorrecto: ${
-                    listCheckInOut[0].isAbsenceForIncorrectRegistration(
-                        schedule,
-                        listPermissions
-                    )
-                }"
-    )
-
-    println(
-        "Persona ${employee.fullName}     " +
-                "Dia: ${listCheckInOut[1].date}      " +
-                "Retardo: ${listCheckInOut[1].isRetardant(schedule, listPermissions)}           " +
-                "Registro incorrecto: ${
-                    listCheckInOut[1].isAbsenceForIncorrectRegistration(
-                        schedule,
-                        listPermissions
-                    )
-                }"
-    )
-
-    println(
-        "Persona ${employee.fullName}     " +
-                "Dia: ${listCheckInOut[2].date}      " +
-                "Retardo: ${listCheckInOut[2].isRetardant(schedule, listPermissions)}           " +
-                "Registro incorrecto: ${
-                    listCheckInOut[2].isAbsenceForIncorrectRegistration(
-                        schedule,
-                        listPermissions
-                    )
-                }"
-    )
-
     val incident = Incident(
         employee = employee,
         currentSchedule = schedule,
@@ -149,7 +113,7 @@ fun main() {
         finalDate = LocalDate.parse("2022-09-17")
     )
 
-    println("Periodo reportado  Inicial: ${incident.initialDate}   Final: ${incident.finalDate}")
-    println("Ausencias:  ${incident.getAbsences()}")
+    println("Periodo reportado: ${incident.initialDate} al ${incident.finalDate}")
+    println("La persona ${employee.fullName} tiene ${incident.getAbsences()} ausencias ")
 
 }
